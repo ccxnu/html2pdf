@@ -1,7 +1,16 @@
-GET http://localhost:3000/
+GET http://localhost:3000/file/crear?type=base64
+
+###
+GET http://localhost:3000/file/crear?file=url&link=https://facebook.com
+
+###
+POST http://localhost:3000/file/crear
+Content-Type: application/json
+
+{
+    "type": "url",
+    "link": "https://facebook.com"
+}
 
 ###
 
-GET http://localhost:3000/file/crear?filename=test
-
-###

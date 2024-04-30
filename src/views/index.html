@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML2PDF</title>
+  </head>
+  <style>
+    body {
+      font-family: system-ui;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+  <body>
+    <main>
+      <h1>HTML to PDF</h1>
+
+      <h2>Imprimir esta página</h2>
+      <a id="normal" href="">Click para convertir esta página</a>
+      <br />
+
+      <h2>Imprimir esta página en base64</h2>
+      <a id="base64" href="">Click para convertir esta página a base64</a>
+      <br />
+
+      <form>
+        <label for="url">Ingresa una url</label> <br />
+        <input id="url" type="text" name="url" value="" />
+        <button type="button">Enviar</button>
+      </form>
+      <br />
+
+      <form>
+        <label for="localFile">Selecciona un archivo</label> <br />
+        <input id="localFile" type="file" name="localFile" value="" />
+        <button type="button">Enviar</button>
+      </form>
+
+      <br />
+      <img
+        src="https://i.pinimg.com/736x/41/fa/9f/41fa9fb11f5af52a54106b4b520783d4--funny-cats-funny-animals.jpg"
+        alt="Gato"
+      />
+    </main>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("normal").href =
+        "/file/crear?link=" + document.location.href;
+
+      document.getElementById("base64").href =
+        "/file/crear?link=" + document.location.href + "&file=base64";
+    });
+  </script>
+</html>
